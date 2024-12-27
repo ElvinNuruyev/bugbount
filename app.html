@@ -1,0 +1,955 @@
+HTTP/2 200 OK
+Date: Fri, 27 Dec 2024 21:07:57 GMT
+Content-Type: text/html;charset=UTF-8
+Vary: Accept-Encoding
+P3p: CP="CUR OTR STA"
+Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+X-Frame-Options: SAMEORIGIN
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Content-Security-Policy: upgrade-insecure-requests
+Content-Security-Policy: frame-ancestors 'self'
+Strict-Transport-Security: max-age=63072000; includeSubDomains
+Server: sfdcedge
+X-Sfdc-Request-Id: f2830e916e279401b88ba8cf62996668
+X-Request-Id: f2830e916e279401b88ba8cf62996668
+
+
+<!DOCTYPE HTML>
+<html><head><title>Verify Identity</title><script src="/static/111213/js/perf/stub.js" type="text/javascript"></script><script src="/faces/a4j/g/3_3_3.Finalorg.ajax4jsf.javascript.AjaxScript?rel=1734715569000" type="text/javascript"></script><script src="/jslibrary/1725859385252/ui-sfdc-javascript-impl/SfdcCore.js" type="text/javascript"></script><script src="https://myapp.monash.edu/lightning/lightning.out.js?v=2" type="text/javascript"></script><script src="/static/111213/js/picklist4.js" type="text/javascript"></script><script src="/jslibrary/1698336665252/sfdc/VFState.js" type="text/javascript"></script><link class="user" href="/slds/css/0lY_n0VXOhe2_VOybLnZWw/min/scoped/one:oneNamespace,force:sldsTokens,force:base,force:formFactorLarge/slds.css" rel="stylesheet" type="text/css" /><link class="user" href="/resource/1618300889000/CommunityPartnerAssets/MonashStyling.css" rel="stylesheet" type="text/css" /><script src="/jslibrary/1698336665252/sfdc/NetworkTracking.js" type="text/javascript"></script><script>try{ NetworkTracking.init('/_ui/networks/tracking/NetworkTrackingServlet', 'network', '0664a0000000ADx'); }catch(x){}</script><script>(function(UITheme) {
+    UITheme.getUITheme = function() { 
+        return UserContext.uiTheme;
+    };
+}(window.UITheme = window.UITheme || {}));</script></head><body class="slds-scope"> 
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /><span id="twoFactor:j_id1"><span id="twoFactor:j_id3"></span>    
+        <style>
+            body {
+                background-color: #F6F6F6 !important;
+            }
+
+            .popover__wrapper {
+                position: relative;
+                display: inline-block;
+            }
+
+            .popover__content {
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                left: -110px;
+                transform: translate(0, 10px);
+                background-color: #fff;
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+                width: 140px;
+            }
+
+            .popover__content:before {
+                position: absolute;
+                z-index: -1;
+                content: "";
+                right: calc(11% - 10px);
+                top: -8px;
+                border-style: solid;
+                border-width: 0 10px 10px 10px;
+                border-color: transparent transparent #fff transparent;
+                transition-duration: 0.3s;
+                transition-property: transform;
+            }
+
+            .popover__content__selected {
+                margin-top: 35px;
+                z-index: 10;
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0, -20px);
+                /*transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);*/
+            }
+
+            .backdrop {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+            .nav-label {
+                font-size: 1rem;
+                font-weight: 400;
+                padding: 10px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                cursor: pointer;
+                background-color: #fff;
+                font-family: "Roboto Condensed", sans-serif;
+            }
+
+            .nav-label span {
+                color: #0E6EAC;
+                text-decoration: none;
+            }
+
+            .nav-label:hover {
+                font-size: 1rem;
+                font-weight: 400;
+                padding: 10px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                cursor: pointer;
+                background-color: #0E6EAC;
+                font-family: "Roboto Condensed", sans-serif;
+            }
+
+            .nav-label:hover span {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .spacer {
+                width: 100%;
+                height: 110px;
+            }
+
+            .hideMobileHeader {
+                display: none;
+            }
+
+            .showMobileHeader {
+                display: block;
+            }
+
+            .forceTop {
+                z-index: 9999;
+            }
+
+            .loginFrame {
+                margin: 0 auto;
+                max-width: 500px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+            .loginForm {
+                background-color: white;
+                display: flex;
+                color: #505050;
+            }
+
+            .front {
+                z-index: 1;
+            }
+            
+            .corneredInput {
+                border: 2px solid #707070 !important;
+                border-radius: 0 !important;
+            }
+
+            .invalidCorneredInput {
+                border: 2px solid rgb(194, 57, 52) !important;
+                border-radius: 0 !important;
+            }
+
+            .disabledInput {
+                background-color: #F3F3F3 !important;
+                pointer-events: none;
+                color: #505050 !important;
+            }
+
+            .tip {
+                width: 35px;
+                line-height: 35px;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 22px;
+                color: white;
+                border: 0px;
+                background-color: #0E6EAC;
+            }
+            .carouselNavigation {
+                border:0px; 
+                padding-right:0px; 
+                background: none;
+            }
+
+            .carouselTitle {
+                font-family:'Roboto Condensed', sans-serif; 
+                font-size: 18px; 
+                font-weight: bold;
+                line-height: 35px;
+            }
+            .carouselHeading {
+                font-family:'Roboto Condensed', sans-serif; 
+                font-size: 15px; 
+                font-weight: bold;
+                line-height: 35px;
+            }
+            .carouselSubHeading {
+                font-family: 'Roboto', sans-serif; 
+                font-size: 12px;
+                color: #707070; 
+            }
+
+        </style>
+        <script type="application/javascript">
+            var confirmVerificationCode;
+            var countdownTimer;
+            var totalMilliseconds;
+            var timeVal;
+            var slides = JSON.parse('[{"subHeading":"Check your device to ensure it has a signal and is able to send and receive messages.","helpText":"Make sure you have service","heading":"Make sure you have service"},{"subHeading":"Check the number you provided on the MFA Registration page is correct and has the right number of digits for your country.","helpText":"Make sure you have entered your number correctly","heading":"Make sure you have entered your number correctly"},{"subHeading":"If international roaming is active on your device you may not receive the SMS with the verification code.","helpText":"Make sure international roaming is turned off","heading":"Make sure international roaming is turned off"},{"subHeading":"If you still have not received your verification code, try turning your mobile off and restarting it.","helpText":"Restart your phone","heading":"Restart your phone"},{"subHeading":"If you still have not received your verification code after these steps, try requesting another code.","helpText":"Request another code","heading":"Request another code"},{"subHeading":" If you still have not received your verification code after these steps, please submit an <a + href=/admissions/secur/logout.jsp?startURL=/admissions/s/ask-us/mfa-enquiry&retUrl=/admissions/s/ask-us/mfa-enquiry>My.App MFA Support Enquiry</a>","helpText":"Submit a support enquiry","heading":"Submit a support enquiry"}]');
+            var activeSlide = 0;
+
+
+            function startTimer() {
+                countdownTimer = 30;
+                document.getElementById("resendVerificationCode").style.display = 'none';  
+                document.getElementById("resendVerificationCodeText").style.display = 'block';  
+                document.getElementById("resendVerificationCodeText").innerHTML = countdownTimer + 's before requesting another code.';  
+
+                // Run timer code in every 100 milliseconds
+                this.timeIntervalInstance = setInterval(function() {
+
+                    // Time calculations for hours, minutes, seconds and milliseconds
+                    var hours = Math.floor((totalMilliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((totalMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((totalMilliseconds % (1000 * 60)) / 1000);
+                    var milliseconds = Math.floor((totalMilliseconds % (1000)));
+                    
+                    // Output the result in the timeVal variable
+                    timeVal = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;   
+                    
+                    countdownTimer -= 1;
+                    document.getElementById("resendVerificationCodeText").innerHTML = countdownTimer + 's before requesting another code.';  
+
+                    if(countdownTimer === 0){
+                        countdownTimer = undefined;
+                        document.getElementById("resendVerificationCode").style.display = 'block';  
+                        document.getElementById("resendVerificationCodeText").style.display = 'none';  
+                        clearInterval(this.timeIntervalInstance);
+                    }
+                }, 1000);
+            }   
+            
+            function logoutTimer() {
+                countdownTimer = 30;
+
+                // Run timer code in every 100 milliseconds
+                this.logoutTimeIntervalInstance = setInterval(function() {
+
+                    // Time calculations for hours, minutes, seconds and milliseconds
+                    var hours = Math.floor((totalMilliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((totalMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((totalMilliseconds % (1000 * 60)) / 1000);
+                    var milliseconds = Math.floor((totalMilliseconds % (1000)));
+                    
+                    // Output the result in the timeVal variable
+                    timeVal = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;   
+                    
+                    countdownTimer -= 1;
+                    document.getElementById("failedAttemptsLimitExceededError").innerHTML = 'You will be logged out in ' + countdownTimer + ' . . .';  
+
+                    if(countdownTimer === 1){
+                        countdownTimer = undefined;
+                        window.location.href = '/secur/logout.jsp';
+                        clearInterval(this.logoutTimeIntervalInstance);
+                    }
+                }, 1000);
+            }  
+            
+            document.addEventListener("DOMContentLoaded", function(){
+                var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+                link.type = 'image/x-icon';
+                link.rel = 'shortcut icon';
+                link.href = '/resource/1569541285000/MonashFavicon';
+                document.getElementsByTagName('head')[0].appendChild(link);
+
+                if(false){
+                    document.getElementById("failedAttemptsLimitExceededError").innerHTML = 'You will be logged out in ' + 10 + ' . . .';  
+                    logoutTimer();                  
+                }
+            });            
+
+            document.addEventListener('keyup', function (e) {
+                if (e.keyCode === 13) {
+                    //doChangePassword();
+                }
+            }, false);
+
+            function doConfirmVerificationCode() {            
+                //check if verification code has value 
+                let verificationCodeField = document.getElementById("verificationCodeField");
+                confirmVerificationCode = verificationCodeField.value;
+                document.getElementById("emptyPassword").style.display = 'none';
+                document.getElementById("verificationCodeErrorText").style.display = 'none';            
+
+                //check if verification code is populated
+                if(confirmVerificationCode && confirmVerificationCode != ''){
+                    verificationCodeField.classList.add('corneredInput');
+                    verificationCodeField.classList.remove('invalidCorneredInput');
+                    document.getElementById("emptyPassword").style.display = 'none';
+
+                    document.getElementById("twoFactor:twoFactorForm:vc").value = confirmVerificationCode;            
+                    document.getElementById("twoFactor:twoFactorForm:vcbtn").click();     
+                    
+                    document.getElementById("mfaFormSpinner").style.display = 'block';
+                }else{
+                    verificationCodeField.classList.remove('corneredInput');
+                    verificationCodeField.classList.add('invalidCorneredInput');   
+                    document.getElementById("emptyPassword").style.display = 'block';
+                }  
+            }
+
+            function doRegisterMobileNumber() {
+                //let extensionField = document.getElementById("extensionField");            
+                let countryField = document.getElementById("twoFactor:twoFactorForm:countryField");
+                let mobileNumberField = document.getElementById("mobileNumberField");  
+                document.getElementById("incompleteCountry").style.display = 'none';          
+                
+                let countryValue;
+                let extensionValue;
+                if(countryField.value){
+                    let selectedCountry = countryField.value.split(' (');
+                    countryValue = selectedCountry[0];
+                    extensionValue = selectedCountry[1].replace(')','');
+                }            
+                mobileNumberValue = mobileNumberField.value;     
+
+                if(countryValue && mobileNumberValue){
+                    disableRegisterFields();
+
+                    document.getElementById("twoFactor:twoFactorForm:vc").value = '0000';
+                    document.getElementById("twoFactor:twoFactorForm:extensionInput").value = extensionValue;
+                    document.getElementById("twoFactor:twoFactorForm:mobileNumberInput").value = mobileNumberValue;
+                    document.getElementById("twoFactor:twoFactorForm:extensionCountryInput").value = countryValue;            
+                    document.getElementById("twoFactor:twoFactorForm:registerMobileNumberBtn").click();
+                    document.getElementById("mfaFormSpinner").style.display = 'block';
+                }else{
+                    document.getElementById("incompleteCountry").style.display = 'block';
+                    
+                    console.log('missing issue');
+                }
+            }
+            
+            function disableRegisterFields() {
+                // disable fields
+                document.getElementById("twoFactor:twoFactorForm:countryField").disabled = true;
+                document.getElementById("mobileNumberField").disabled = true;
+            }
+
+            function doResendVerificationCode() {
+                document.getElementById("verificationCodeErrorText").style.display = 'none';  
+                startTimer();
+                if(true){
+                    resendVfRegisterMobileNumber(); 
+                }else{ 
+                    resendVerification();
+                }
+            }        
+
+            function doSendVfEmailVerification() {      
+                document.getElementById("twoFactor:twoFactorForm:vc").value = '0000';
+                document.getElementById("twoFactor:twoFactorForm:sendEmailVerificationCodeBtn").click();     
+            }
+
+            function doResetCountryMobileNumber() {      
+                document.getElementById("twoFactor:twoFactorForm:vc").value = '0000';
+                document.getElementById("twoFactor:twoFactorForm:resetFieldsBtn").click();     
+            }
+
+            function doConfirmMobileRegistration() {      
+                //check if verification code has value
+                let verificationCodeField = document.getElementById("verificationCodeField");
+                confirmVerificationCode = verificationCodeField.value;
+                document.getElementById("emptyPassword").style.display = 'none';
+                document.getElementById("verificationCodeErrorText").style.display = 'none';            
+
+                //check if verification code is populated
+                if(confirmVerificationCode && confirmVerificationCode != ''){
+                    verificationCodeField.classList.add('corneredInput');
+                    verificationCodeField.classList.remove('invalidCorneredInput');
+                    document.getElementById("emptyPassword").style.display = 'none';
+
+                    document.getElementById("twoFactor:twoFactorForm:vc").value = confirmVerificationCode;            
+                    document.getElementById("twoFactor:twoFactorForm:completeRegisterMobileNumberBtn").click();     
+                    
+                    document.getElementById("mfaFormSpinner").style.display = 'block';
+                }else{
+                    verificationCodeField.classList.remove('corneredInput');
+                    verificationCodeField.classList.add('invalidCorneredInput');   
+                    document.getElementById("emptyPassword").style.display = 'block';
+                }    
+            }
+
+            function redirectHome() {
+                window.href.location = '/admissions/s/';
+            }
+
+            function onlyNumberKey(evt) {          
+                // Only ASCII character in that range allowed
+                var ASCIICode = (evt.which) ? evt.which : evt.keyCode;
+                if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57) || ASCIICode === 13)
+                    return false;
+                return true;
+            }
+
+            function onlyNumberKeyVerificationCode(evt) {          
+                // Only ASCII character in that range allowed
+                var ASCIICode = (evt.which) ? evt.which : evt.keyCode;
+
+                if(ASCIICode === 13){
+                    if(true){
+                        // confirm registration
+                        doConfirmMobileRegistration();
+                    }else{
+                        // confirm registration
+                        doConfirmVerificationCode();
+                    }
+                }
+
+                if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57) || ASCIICode === 13)
+                    return false;
+
+                return true;
+            }
+
+            function handlePrevious() {
+                if (activeSlide > 0){
+                    activeSlide--;
+                    var displaySlide = slides[activeSlide];
+                    document.getElementById('Carousel-heading').innerHTML = displaySlide.heading;
+                    document.getElementById('Carousel-subHeading').innerHTML = displaySlide.subHeading;
+                    document.getElementById('tip').innerHTML = activeSlide + 1;
+                    document.getElementById('chevron-right').style = "display:block";
+                } 
+                // hide left navigation when first slide
+                if (activeSlide == 0) {
+                    document.getElementById('chevron-left').style = "display:none";
+                }
+            }
+            
+            function handleNext() {
+                if (activeSlide < slides.length - 1){
+                    activeSlide++;
+                    var displaySlide = slides[activeSlide];
+                    document.getElementById('Carousel-heading').innerHTML = displaySlide.heading;
+                    document.getElementById('Carousel-subHeading').innerHTML = displaySlide.subHeading;
+                    document.getElementById('tip').innerHTML = activeSlide + 1;
+                    document.getElementById('chevron-left').style = "display:block";
+                } 
+                // hide right navigation when last slide
+                if (activeSlide == slides.length - 1) {
+                    document.getElementById('chevron-right').style = "display:none";
+                }
+            }
+        </script>
+
+        
+        <div style="background-color: #91B1CE;">
+            <div>
+                
+                <header class="header" id="desktopHeader" role="banner" style="z-index: 9999;">
+                    <div class="mobile-hidden">
+                        <div class="header-row">
+                            <div class="content-wrapper">
+                                <div class="header-row__items">
+                                    <div class="header-row__logo-wrapper">
+                                        <a class="header-row__logo-link" href="http://www.monash.edu" target="_blank">
+                                            <img alt="Monash University" class="header-row__logo-img monash-logo" src="/resource/1618300889000/CommunityPartnerAssets/images/monash-logo.svg?orgId=00D280000016GQ6" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-row navbar--monash-blue megamenu--monash-blue" style="height: 55px;">
+                            <div class="page-wrapper">
+                                <div class="content-wrapper flex-wrapper">
+                                    <lightning-layout>
+                                        <lightning-layout-item>
+                                            <div class="content-wrapper flex-wrapper">
+                                                
+                                                <nav class="navbar uber-accordion" role="navigation">
+                                                    <button aria-controls="navbar__dropdown" class="navbar__toggle uber-accordion__button" role="button">
+                                                        Menu
+                                                    </button>
+                                                </nav>
+                                                <div class="header-row__logo-wrapper desktop-hidden">
+                                                    <a class="header-row__logo-link" href="http://www.monash.edu" target="_blank">
+                                                        <img alt="Monash University" class="header-row__logo-img" src="/resource/1618300889000/CommunityPartnerAssets/images/monash-logo.svg?orgId=00D280000016GQ6" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item alignment-bump="left">
+                                            <div class="content-wrapper flex-wrapper nav">                                
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                
+                <header class="header" id="mobileHeader" role="banner">
+                    <div class="header-row navbar--monash-blue megamenu--monash-blue desktop-hidden forceTop" style="background: #fff; position: fixed; width: 100%;">
+                        <div class="page-wrapper">
+                            
+                            <div class="content-wrapper flex-wrapper">
+                                <div style="display: flex;">
+
+                                    <nav class="navbar uber-accordion" role="navigation">
+                                        <button aria-controls="navbar__dropdown" class="navbar__toggle uber-accordion__button slds-hidden" role="button">Menu</button>         
+                                        <div aria-expanded="false" class="navbar__dropdown uber-accordion__target navbar__dropdown--mobile" role="region">                        
+                                            <ul class="navbar__list navbar__list--home">
+                                                <li class="navbar__item">
+                                                    <span class="navbar__item-logo-mobile"></span>
+                                                    <button aria-controls="navbar__dropdown" class="navbar__toggle uber-accordion__button uber-accordion__button-active navbar__toggle-cloned" role="button">Menu</button>
+                                                </li>
+                                                <li class="navbar__item navbar__item--current-parent">
+                                                    <a class="navbar__item-lbl" href="#">
+                                                        <span class="navbar__item-text">Home</span>
+                                                    </a>                                        
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                    
+                                    <div class="header-row__logo-wrapper" style="padding-top: 0;">
+                                        <a class="header-row__logo-link" href="https://www.monash.edu" id="header-logo-mobile" target="_blank">
+                                            <img alt="Monash University" class="header-row__logo-img" src="/resource/1618300889000/CommunityPartnerAssets/images/monash-logo.svg?orgId=00D280000016GQ6" />
+                                        </a>
+                                    </div>
+                                    
+                                    <span class="header-row__search header-row__search-global" style="opacity: 0;">
+                                        <button class="header-row__search-icon" type="button"><span class="visuallyhidden">Toggle Search</span></button>
+                                        
+                                    </span>
+                                </div>       
+                            </div>                
+                            <div class="header-row__site-title desktop-hidden" id="site-heading-mobile">
+                                Verification Code
+                            </div>  
+                        </div>
+                    </div>
+                </header>
+                <div class="spacer desktop-hidden"></div>
+            </div>
+            
+            
+            <div id="content">
+<form id="twoFactor:twoFactorForm" name="twoFactor:twoFactorForm" method="post" action="/Portal_TwoFactor" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="twoFactor:twoFactorForm" value="twoFactor:twoFactorForm" />
+<script id="twoFactor:twoFactorForm:j_id8" type="text/javascript">resendVerification=function(){A4J.AJAX.Submit('twoFactor:twoFactorForm',null,{'similarityGroupingId':'twoFactor:twoFactorForm:j_id8','parameters':{'twoFactor:twoFactorForm:j_id8':'twoFactor:twoFactorForm:j_id8'} ,'status':'codeStatus'} )};
+</script><script id="twoFactor:twoFactorForm:j_id9" type="text/javascript">resendVfRegisterMobileNumber=function(){A4J.AJAX.Submit('twoFactor:twoFactorForm',null,{'similarityGroupingId':'twoFactor:twoFactorForm:j_id9','parameters':{'twoFactor:twoFactorForm:j_id9':'twoFactor:twoFactorForm:j_id9'} ,'status':'codeStatus'} )};
+</script>
+                    <span style="display: none;"><input id="twoFactor:twoFactorForm:vc" type="text" name="twoFactor:twoFactorForm:vc" value="333333" required="required" /><input id="twoFactor:twoFactorForm:extensionInput" type="text" name="twoFactor:twoFactorForm:extensionInput" value="+1" /><input id="twoFactor:twoFactorForm:mobileNumberInput" type="text" name="twoFactor:twoFactorForm:mobileNumberInput" value="2066578445" /><input id="twoFactor:twoFactorForm:extensionCountryInput" type="text" name="twoFactor:twoFactorForm:extensionCountryInput" value="United States" /><input id="twoFactor:twoFactorForm:vcbtn" type="submit" name="twoFactor:twoFactorForm:vcbtn" value="Confirm Code" /><input id="twoFactor:twoFactorForm:sendEmailVerificationCodeBtn" type="submit" name="twoFactor:twoFactorForm:sendEmailVerificationCodeBtn" value="Send To Email" /><input id="twoFactor:twoFactorForm:registerMobileNumberBtn" type="submit" name="twoFactor:twoFactorForm:registerMobileNumberBtn" value="Register MFA" /><input id="twoFactor:twoFactorForm:completeRegisterMobileNumberBtn" type="submit" name="twoFactor:twoFactorForm:completeRegisterMobileNumberBtn" value="Register MFA Confirm Code" /><input id="twoFactor:twoFactorForm:resetFieldsBtn" type="submit" name="twoFactor:twoFactorForm:resetFieldsBtn" value="Reset Fields" />                 
+                    </span>
+
+                    <div class="backgroundImage slds-is-relative " style="background-color:#91B1CE;"><span id="twoFactor:twoFactorForm:mfaFormPanel">
+                            <div class="loginFrame">
+                                <div class="slds-is-relative">
+                                    <div class="loginForm slds-p-horizontal_large slds-p-vertical_medium slds-grid slds-wrap">
+                                    
+                                        <div class="slds-size_1-of-1">
+                                            <div id="mfaFormHeader" style="font-family:'Roboto Condensed', sans-serif; font-size: 36px; font-weight: bold; line-height: 50px;"><span id="twoFactor:twoFactorForm:j_id21">
+                                                    Multi-Factor Authentication</span>
+                                            </div>
+                                            <div class="slds-m-top_small" id="mfaFormSubHeader" style="color: #707070; font-family: 'Roboto Condensed', sans-serif; font-size: 15px;"><span id="twoFactor:twoFactorForm:j_id32">
+                                                    You need to register a mobile number to be able to login to the My.App platform. 
+                                                    <br /><br />
+                                                    In addition to the purposes set out in the <a href="https://www.monash.edu/__data/assets/pdf_file/0004/1595263/Admissions-Data-Protection-and-Privacy-Collection-Statement.pdf" target="_blank">Admissions Data Protection and Privacy Collection Statement</a>, this number will be used to send you a unique verification code when you login so that we know that it's you accessing the platform.
+                                                    <br /><br />
+                                                    <div class="slds-m-bottom_x-small" id="mfaFormHeader" style="font-family:'Roboto Condensed', sans-serif; font-size: 25px; font-weight: bold; line-height: 30px;">
+                                                        Experiencing problems?
+                                                    </div>
+                                                    Please read the <a href="https://www.monash.edu/admissions/apply/help/faqs" target="_blank">Admissions Application FAQs</a> for some troubleshooting tips if you did not receive your verification code via SMS.</span>
+                                            </div>
+                                        </div>
+                                        <div class="slds-size_1-of-1" id="mfaForm" style="font-family:'Roboto', sans-serif; font-size: 15px; color: #707070;">   
+                                            <div class="slds-form-element slds-m-top_x-small"><span id="twoFactor:twoFactorForm:j_id35">
+                                                    
+                                                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right slds-p-bottom_small">
+                                                        <b style="font-family:'Roboto Condensed', sans-serif; color: #505050;">Country</b><select id="twoFactor:twoFactorForm:countryField" name="twoFactor:twoFactorForm:countryField" class="corneredInput slds-input disabledInput" size="1">	<option value="">-- Please Select --</option>
+	<option value="Afghanistan (+93)">Afghanistan (+93)</option>
+	<option value="Albania (+355)">Albania (+355)</option>
+	<option value="Algeria (+213)">Algeria (+213)</option>
+	<option value="Andorra (+376)">Andorra (+376)</option>
+	<option value="Angola (+244)">Angola (+244)</option>
+	<option value="Anguilla (+1)">Anguilla (+1)</option>
+	<option value="Antigua and Barbuda (+1)">Antigua and Barbuda (+1)</option>
+	<option value="Argentina (+54)">Argentina (+54)</option>
+	<option value="Armenia (+374)">Armenia (+374)</option>
+	<option value="Aruba (+297)">Aruba (+297)</option>
+	<option value="Australia (+61)">Australia (+61)</option>
+	<option value="Austria (+43)">Austria (+43)</option>
+	<option value="Azerbaijan (+994)">Azerbaijan (+994)</option>
+	<option value="Bahamas (+1)">Bahamas (+1)</option>
+	<option value="Bahrain (+973)">Bahrain (+973)</option>
+	<option value="Bangladesh (+880)">Bangladesh (+880)</option>
+	<option value="Barbados (+1)">Barbados (+1)</option>
+	<option value="Belarus (+375)">Belarus (+375)</option>
+	<option value="Belgium (+32)">Belgium (+32)</option>
+	<option value="Belize (+501)">Belize (+501)</option>
+	<option value="Benin (+229)">Benin (+229)</option>
+	<option value="Bermuda (+1)">Bermuda (+1)</option>
+	<option value="Bhutan (+975)">Bhutan (+975)</option>
+	<option value="Bolivia (+591)">Bolivia (+591)</option>
+	<option value="Bosnia and Herzegovina (+387)">Bosnia and Herzegovina (+387)</option>
+	<option value="Botswana (+267)">Botswana (+267)</option>
+	<option value="Brazil (+55)">Brazil (+55)</option>
+	<option value="Brunei (+673)">Brunei (+673)</option>
+	<option value="Bulgaria (+359)">Bulgaria (+359)</option>
+	<option value="Burkina Faso (+226)">Burkina Faso (+226)</option>
+	<option value="Burundi (+257)">Burundi (+257)</option>
+	<option value="Cabo Verde (+238)">Cabo Verde (+238)</option>
+	<option value="Cambodia (+855)">Cambodia (+855)</option>
+	<option value="Cameroon (+237)">Cameroon (+237)</option>
+	<option value="Canada (+1)">Canada (+1)</option>
+	<option value="Cayman Islands (+1)">Cayman Islands (+1)</option>
+	<option value="Central African Republic (+236)">Central African Republic (+236)</option>
+	<option value="Chad (+235)">Chad (+235)</option>
+	<option value="Chile (+56)">Chile (+56)</option>
+	<option value="PR China (+86)">PR China (+86)</option>
+	<option value="Turks and Caicos Islands (+1)">Turks and Caicos Islands (+1)</option>
+	<option value="Colombia (+57)">Colombia (+57)</option>
+	<option value="Comoros (+269)">Comoros (+269)</option>
+	<option value="Democratic Republic of the Congo (+243)">Democratic Republic of the Congo (+243)</option>
+	<option value="Congo (+242)">Congo (+242)</option>
+	<option value="Cook Islands (+682)">Cook Islands (+682)</option>
+	<option value="Costa Rica (+506)">Costa Rica (+506)</option>
+	<option value="Ivory Coast (+225)">Ivory Coast (+225)</option>
+	<option value="Croatia (+385)">Croatia (+385)</option>
+	<option value="Curacao (+599)">Curacao (+599)</option>
+	<option value="Cyprus (+357)">Cyprus (+357)</option>
+	<option value="Czechia (+420)">Czechia (+420)</option>
+	<option value="Denmark (+45)">Denmark (+45)</option>
+	<option value="Djibouti (+253)">Djibouti (+253)</option>
+	<option value="Dominica (+1)">Dominica (+1)</option>
+	<option value="Dominican Republic (+1)">Dominican Republic (+1)</option>
+	<option value="Ecuador (+593)">Ecuador (+593)</option>
+	<option value="Egypt (+20)">Egypt (+20)</option>
+	<option value="El Salvador (+503)">El Salvador (+503)</option>
+	<option value="United Kingdom (+44)">United Kingdom (+44)</option>
+	<option value="Equatorial Guinea (+240)">Equatorial Guinea (+240)</option>
+	<option value="Eritrea (+291)">Eritrea (+291)</option>
+	<option value="Estonia (+372)">Estonia (+372)</option>
+	<option value="Eswatini (+268)">Eswatini (+268)</option>
+	<option value="Ethiopia (+251)">Ethiopia (+251)</option>
+	<option value="Falkland Islands (+500)">Falkland Islands (+500)</option>
+	<option value="Faroe Islands (+298)">Faroe Islands (+298)</option>
+	<option value="Fiji (+679)">Fiji (+679)</option>
+	<option value="Finland (+358)">Finland (+358)</option>
+	<option value="France (+33)">France (+33)</option>
+	<option value="French Guiana (+594)">French Guiana (+594)</option>
+	<option value="French Polynesia (+689)">French Polynesia (+689)</option>
+	<option value="Gabon (+241)">Gabon (+241)</option>
+	<option value="Gambia (+220)">Gambia (+220)</option>
+	<option value="Georgia (+995)">Georgia (+995)</option>
+	<option value="Germany (+49)">Germany (+49)</option>
+	<option value="Ghana (+233)">Ghana (+233)</option>
+	<option value="Gibraltar (+350)">Gibraltar (+350)</option>
+	<option value="Greece (+30)">Greece (+30)</option>
+	<option value="Greenland (+299)">Greenland (+299)</option>
+	<option value="Grenada (+1)">Grenada (+1)</option>
+	<option value="Guadeloupe (+590)">Guadeloupe (+590)</option>
+	<option value="Guam (+1)">Guam (+1)</option>
+	<option value="Guatemala (+502)">Guatemala (+502)</option>
+	<option value="Guernsey (+44)">Guernsey (+44)</option>
+	<option value="Guinea (+224)">Guinea (+224)</option>
+	<option value="Guinea-Bissau (+245)">Guinea-Bissau (+245)</option>
+	<option value="Guyana (+592)">Guyana (+592)</option>
+	<option value="Haiti (+509)">Haiti (+509)</option>
+	<option value="Honduras (+504)">Honduras (+504)</option>
+	<option value="Hong Kong (+852)">Hong Kong (+852)</option>
+	<option value="Hungary (+36)">Hungary (+36)</option>
+	<option value="Iceland (+354)">Iceland (+354)</option>
+	<option value="India (+91)">India (+91)</option>
+	<option value="Indonesia (+62)">Indonesia (+62)</option>
+	<option value="Iraq (+964)">Iraq (+964)</option>
+	<option value="Ireland (+353)">Ireland (+353)</option>
+	<option value="Isle of Man (+44)">Isle of Man (+44)</option>
+	<option value="Israel (+972)">Israel (+972)</option>
+	<option value="Italy (+39)">Italy (+39)</option>
+	<option value="Jamaica (+1)">Jamaica (+1)</option>
+	<option value="Japan (+81)">Japan (+81)</option>
+	<option value="Jersey (+81)">Jersey (+81)</option>
+	<option value="Jordan (+962)">Jordan (+962)</option>
+	<option value="Kazakhstan (+7)">Kazakhstan (+7)</option>
+	<option value="Kenya (+254)">Kenya (+254)</option>
+	<option value="Kiribati (+686)">Kiribati (+686)</option>
+	<option value="South Korea (+82)">South Korea (+82)</option>
+	<option value="Kosovo (+383)">Kosovo (+383)</option>
+	<option value="Kuwait (+965)">Kuwait (+965)</option>
+	<option value="Laos (+856)">Laos (+856)</option>
+	<option value="Latvia (+371)">Latvia (+371)</option>
+	<option value="Lebanon (+961)">Lebanon (+961)</option>
+	<option value="Lesotho (+266)">Lesotho (+266)</option>
+	<option value="Liberia (+231)">Liberia (+231)</option>
+	<option value="Libya (+218)">Libya (+218)</option>
+	<option value="Liechtenstein (+423)">Liechtenstein (+423)</option>
+	<option value="Lithuania (+370)">Lithuania (+370)</option>
+	<option value="Luxembourg (+352)">Luxembourg (+352)</option>
+	<option value="Macau (+853)">Macau (+853)</option>
+	<option value="Madagascar (+261)">Madagascar (+261)</option>
+	<option value="Malawi (+265)">Malawi (+265)</option>
+	<option value="Malaysia (+60)">Malaysia (+60)</option>
+	<option value="Maldives (+960)">Maldives (+960)</option>
+	<option value="Mali (+223)">Mali (+223)</option>
+	<option value="Malta (+356)">Malta (+356)</option>
+	<option value="Marshall Islands (+692)">Marshall Islands (+692)</option>
+	<option value="Martinique (+596)">Martinique (+596)</option>
+	<option value="Mauritania (+222)">Mauritania (+222)</option>
+	<option value="Mauritius (+230)">Mauritius (+230)</option>
+	<option value="Mayotte (+262)">Mayotte (+262)</option>
+	<option value="Mexico (+52)">Mexico (+52)</option>
+	<option value="Micronesia (+691)">Micronesia (+691)</option>
+	<option value="Moldava (+373)">Moldava (+373)</option>
+	<option value="Monaco (+377)">Monaco (+377)</option>
+	<option value="Mongolia (+976)">Mongolia (+976)</option>
+	<option value="Montenegro (+382)">Montenegro (+382)</option>
+	<option value="Montserrat (+1)">Montserrat (+1)</option>
+	<option value="Morocco (+212)">Morocco (+212)</option>
+	<option value="Mozambique (+258)">Mozambique (+258)</option>
+	<option value="Myanmar (+95)">Myanmar (+95)</option>
+	<option value="Namibia (+264)">Namibia (+264)</option>
+	<option value="Nauru (+674)">Nauru (+674)</option>
+	<option value="Nepal (+977)">Nepal (+977)</option>
+	<option value="Netherlands (+31)">Netherlands (+31)</option>
+	<option value="New Caledonia (+687)">New Caledonia (+687)</option>
+	<option value="New Zealand (+64)">New Zealand (+64)</option>
+	<option value="Nicaragua (+505)">Nicaragua (+505)</option>
+	<option value="Niger (+227)">Niger (+227)</option>
+	<option value="Nigeria (+234)">Nigeria (+234)</option>
+	<option value="Niue (+683)">Niue (+683)</option>
+	<option value="Norfolk Island (+672)">Norfolk Island (+672)</option>
+	<option value="Macedonia (+389)">Macedonia (+389)</option>
+	<option value="Northern Mariana Islands (+1)">Northern Mariana Islands (+1)</option>
+	<option value="Norway (+47)">Norway (+47)</option>
+	<option value="Oman (+968)">Oman (+968)</option>
+	<option value="Pakistan (+92)">Pakistan (+92)</option>
+	<option value="Palau (+680)">Palau (+680)</option>
+	<option value="Panama (+507)">Panama (+507)</option>
+	<option value="Papua New Guinea (+675)">Papua New Guinea (+675)</option>
+	<option value="Paraguay (+595)">Paraguay (+595)</option>
+	<option value="Peru (+51)">Peru (+51)</option>
+	<option value="Philippines (+63)">Philippines (+63)</option>
+	<option value="Pitcairn (+64)">Pitcairn (+64)</option>
+	<option value="Poland (+48)">Poland (+48)</option>
+	<option value="Portugal (+351)">Portugal (+351)</option>
+	<option value="Puerto Rico (+1)">Puerto Rico (+1)</option>
+	<option value="Qatar (+974)">Qatar (+974)</option>
+	<option value="Reunion (+262)">Reunion (+262)</option>
+	<option value="Romania (+40)">Romania (+40)</option>
+	<option value="Russia (+7)">Russia (+7)</option>
+	<option value="Rwanda (+250)">Rwanda (+250)</option>
+	<option value="Samoa (+685)">Samoa (+685)</option>
+	<option value="American Samoa (+684)">American Samoa (+684)</option>
+	<option value="San Marino (+378)">San Marino (+378)</option>
+	<option value="Sao Tome and Principe (+239)">Sao Tome and Principe (+239)</option>
+	<option value="Saudi Arabia (+966)">Saudi Arabia (+966)</option>
+	<option value="Senegal (+221)">Senegal (+221)</option>
+	<option value="Serbia (+381)">Serbia (+381)</option>
+	<option value="Seychelles (+248)">Seychelles (+248)</option>
+	<option value="Sierra Leone (+232)">Sierra Leone (+232)</option>
+	<option value="Singapore (+65)">Singapore (+65)</option>
+	<option value="Sint Maarten (+1)">Sint Maarten (+1)</option>
+	<option value="Slovakia (+421)">Slovakia (+421)</option>
+	<option value="Slovenia (+386)">Slovenia (+386)</option>
+	<option value="Solomon Islands (+677)">Solomon Islands (+677)</option>
+	<option value="South Africa (+27)">South Africa (+27)</option>
+	<option value="South Sudan (+211)">South Sudan (+211)</option>
+	<option value="Spain (+34)">Spain (+34)</option>
+	<option value="Sri Lanka (+94)">Sri Lanka (+94)</option>
+	<option value="Sudan (+249)">Sudan (+249)</option>
+	<option value="Suriname (+597)">Suriname (+597)</option>
+	<option value="Sweden (+46)">Sweden (+46)</option>
+	<option value="Switzerland (+41)">Switzerland (+41)</option>
+	<option value="Taiwan (+886)">Taiwan (+886)</option>
+	<option value="Tajikistan (+992)">Tajikistan (+992)</option>
+	<option value="Tanzania (+255)">Tanzania (+255)</option>
+	<option value="Thailand (+66)">Thailand (+66)</option>
+	<option value="Timor-Leste (+670)">Timor-Leste (+670)</option>
+	<option value="Togo (+228)">Togo (+228)</option>
+	<option value="Tokelau (+690)">Tokelau (+690)</option>
+	<option value="Tonga (+676)">Tonga (+676)</option>
+	<option value="Trinidad and Tobago (+1)">Trinidad and Tobago (+1)</option>
+	<option value="Tunisia (+216)">Tunisia (+216)</option>
+	<option value="Turkey (+90)">Turkey (+90)</option>
+	<option value="Turkmenistan (+993)">Turkmenistan (+993)</option>
+	<option value="Tuvalu (+688)">Tuvalu (+688)</option>
+	<option value="Uganda (+256)">Uganda (+256)</option>
+	<option value="Ukraine (+380)">Ukraine (+380)</option>
+	<option value="United Arab Emirates (+971)">United Arab Emirates (+971)</option>
+	<option value="United States (+1)" selected="selected">United States (+1)</option>
+	<option value="Uruguay (+598)">Uruguay (+598)</option>
+	<option value="Uzbekistan (+998)">Uzbekistan (+998)</option>
+	<option value="Vanuatu (+678)">Vanuatu (+678)</option>
+	<option value="Venezuela (+58)">Venezuela (+58)</option>
+	<option value="Vietnam (+84)">Vietnam (+84)</option>
+	<option value="British Virgin Islands (+1)">British Virgin Islands (+1)</option>
+	<option value="US Virgin Islands (+1)">US Virgin Islands (+1)</option>
+	<option value="Wallis and Futuna (+681)">Wallis and Futuna (+681)</option>
+	<option value="Western Sahara (+212)">Western Sahara (+212)</option>
+	<option value="Yemen (+967)">Yemen (+967)</option>
+	<option value="Zambia (+260)">Zambia (+260)</option>
+	<option value="Zimbabwe (+263)">Zimbabwe (+263)</option>
+</select>
+                                                    </div>
+                                                    
+                                                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right slds-p-bottom_small">
+                                                        <b style="font-family:'Roboto Condensed', sans-serif; color: #505050;">Mobile number</b>
+                                                        <input class="corneredInput slds-input disabledInput" id="mobileNumberField" label="Mobile number" name="mobileNumber_field" onkeypress="return onlyNumberKey(event)" type="text" value="2066578445" variant="label-hidden">
+                                                        </input>
+                                                    </div></span><span id="twoFactor:twoFactorForm:j_id39"><span id="twoFactor:twoFactorForm:j_id42">
+                                                        
+                                                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                                            <b style="color: #505050;">Verification Code</b>
+                                                            <input class="corneredInput slds-input " id="verificationCodeField" label="Verification Code" name="verificationCode_field" onkeypress="return onlyNumberKeyVerificationCode(event)" type="text" variant="label-hidden">
+                                                            </input>
+                                                        </div><span id="twoFactor:twoFactorForm:j_id44">
+                                                            <div style="text-align: right;">
+                                                                <a href="#" onclick="doResetCountryMobileNumber();" style="text-decoration: none;">Register a different mobile number</a>
+                                                            </div></span></span></span>
+                                                <div>
+                                                    <span class="slds-m-top_xx-small" id="emptyPassword" style="font-family:'Roboto', sans-serif; font-size: 13px; color: rgb(194, 57, 52); display: none;">                                        
+                                                        * Please enter a verification code.
+                                                    </span>
+                                                    <span class="slds-m-top_xx-small" id="incompleteCountry" style="font-family:'Roboto', sans-serif; font-size: 13px; color: rgb(194, 57, 52); display: none;">                                        
+                                                        * Please enter both country and mobile number.
+                                                    </span>
+                                                    <span class="slds-m-top_xx-small slds-m-bottom_xx-small" id="verificationCodeErrorText" style="display: block; font-family:'Roboto', sans-serif; font-size: 13px; color: rgb(194, 57, 52);"><label>
+* You have entered an incorrect verification code</label>
+                                                    </span>
+                                                </div>
+                                            </div><span id="twoFactor:twoFactorForm:j_id62"><span id="twoFactor:twoFactorForm:j_id63">
+                                                    <div class="slds-float_left" style="width: 45%; margin-right: 5%;">
+                                                        <p class="slds-m-top_small" id="resendVerificationCodeText" style="text-align: center; display: none;"></p>
+                                                        <input class="btn btn--blue applicationAction slds-p-vertical_x-small slds-m-top_small " id="resendVerificationCode" onclick="doResendVerificationCode();" style="font-weight: bold; width: 100%; border: 2px solid #0E6EAC; background-color: #fff; color: #0E6EAC; font-size: 15px;" type="button" value="Resend Code" />
+                                                    </div></span><span id="twoFactor:twoFactorForm:j_id67">
+                                                    
+                                                    <div class="slds-float_left" style="width: 45%; margin-left: 5%; min-height: 35px;">
+                                                        <input class="btn btn--blue applicationAction slds-p-vertical_x-small slds-m-top_small" id="submitButton" onclick="doConfirmMobileRegistration()" style="color: white; font-weight: bold; width: 100%; border: 2px solid #0E6EAC; font-size: 15px;" type="button" value="Confirm Code" />
+                                                    </div></span><span id="twoFactor:twoFactorForm:j_id69"></span></span>
+
+                                            <div class="slds-is-relative slds-m-top_small" id="submissionSpinner" style="height: 3rem; display: none;">
+                                                <div class="slds-spinner_container">
+                                                    <div class="slds-spinner slds-spinner_medium slds-spinner_brand" role="status">
+                                                        <span class="slds-assistive-text">Loading</span>
+                                                        <div class="slds-spinner__dot-a"></div>
+                                                        <div class="slds-spinner__dot-b"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="mfaFormSpinner" style="display: none;">
+                                            <div class="slds-spinner_container">
+                                                <div class="slds-spinner slds-spinner_medium slds-spinner_brand" role="status">
+                                                    <span class="slds-assistive-text">Loading</span>
+                                                    <div class="slds-spinner__dot-a"></div>
+                                                    <div class="slds-spinner__dot-b"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="mfaSpinner" style="display: none; height: 350px;">
+                                            <div class="slds-spinner_container">
+                                                <div class="slds-spinner slds-spinner_medium slds-spinner_brand" role="status">
+                                                    <span class="slds-assistive-text">Loading</span>
+                                                    <div class="slds-spinner__dot-a"></div>
+                                                    <div class="slds-spinner__dot-b"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><span id="twoFactor:twoFactorForm:Carousel">
+                                        <div class="slds-border_top loginForm slds-p-top_xx-small slds-p-bottom_x-small slds-grid" style="background-color: #F6F6F6;border-top: 2px solid #0E6EAC;">
+                                            <div class="slds-size_1-of-12">
+                                                <button class="carouselNavigation slds-p-vertical_x-small slds-m-top_xx-large" id="chevron-left" onclick="handlePrevious()" style="display: none" type="button">
+                                                    <span style="color:#0E6EAC">
+                                                        <span class="slds-icon_container slds-icon-utility-chevronleft slds-current-color">
+                                                            <svg aria-hidden="true" class="slds-icon "><use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#chevronleft" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                </use></svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="slds-size_10-of-12 slds-p-around_small">
+                                                <div class="carouselTitle">
+                                                    <span id="Carousel-title">Haven't received your verification code?</span>
+                                                </div>
+                                                <div class="carouselHeading">
+                                                    <span id="Carousel-heading">Make sure you have service</span>
+                                                </div>
+                                                <div class="slds-grid">
+                                                    <div class="slds-size_1-of-12">
+                                                        <div class="tip" id="tip">1</div>
+                                                    </div>
+                                                    <div class="carouselSubHeading slds-size_11-of-12 slds-m-left_small">
+                                                        <div id="Carousel-subHeading">Check your device to ensure it has a signal and is able to send and receive messages.</div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-size_1-of-12">
+                                                <button class="carouselNavigation slds-p-vertical_x-small slds-m-top_xx-large" id="chevron-right" onclick="handleNext()" type="button">
+                                                    <span style="color:#0E6EAC">
+                                                        <span class="slds-icon_container slds-icon-utility-chevronright slds-current-color">
+                                                            <svg aria-hidden="true" class="slds-icon "><use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#chevronright" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                </use></svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div></span>
+                                </div>
+                            </div></span>
+                    </div><div id="twoFactor:twoFactorForm:j_id136"></div>
+</form><span id="ajax-view-state-page-container" style="display: none"><span id="ajax-view-state" style="display: none"><input type="hidden"  id="com.salesforce.visualforce.ViewState" name="com.salesforce.visualforce.ViewState" value="i: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" /><input type="hidden"  id="com.salesforce.visualforce.ViewStateVersion" name="com.salesforce.visualforce.ViewStateVersion" value="202412201726094013" /><input type="hidden"  id="com.salesforce.visualforce.ViewStateMAC" name="com.salesforce.visualforce.ViewStateMAC" value="AGV5SnViMjVqWlNJNkluUk9URXhDTkhWVFZHaFJlVEo0WDJ0Q2NscEJUR1UyUm1sMmNtdGxabUprY2tsaFIxaEliMUZwWlRoY2RUQXdNMlFpTENKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUlzSW10cFpDSTZJbnRjSW5SY0lqcGNJakF3UkRJNE1EQXdNREF4TmtkUk5sd2lMRndpZGx3aU9sd2lNREpITUVrd01EQXdNREJuZGtSdlhDSXNYQ0poWENJNlhDSjJabk5wWjI1cGJtZHJaWGxjSWl4Y0luVmNJanBjSWpBd05VOWhNREF3TURBMVZtZHpkbHdpZlNJc0ltTnlhWFFpT2xzaWFXRjBJbDBzSW1saGRDSTZNVGN6TlRNek16WTNOell6TXl3aVpYaHdJam93ZlE9PS4ubUJxUVY3TUF1ZG54bXctQXduWEdaVk9ub2UxMGZCb3hVb0dJd3hBRTd2OD0=" /><input type="hidden"  id="com.salesforce.visualforce.ViewStateCSRF" name="com.salesforce.visualforce.ViewStateCSRF" value="VmpFPSxNakF5TkMweE1pMHpNRlF5TVRvd056bzFOeTQyTXpOYSwwYVF1RDhfd0Z6UGhaUGZOaDBLLUJ1SjNuaW5odjF6QXdGR0JvQ1ZLX1ZFPSxOMlJtWkRoag==" /></span></span>
+            </div>
+
+            
+            <footer class="footer bg-light-grey slds-p-bottom_small" id="footer" role="contentinfo">
+                <div class="footer-social-media" id="footer-social-media" style="height: 100px;">
+                    <div class="content-wrapper footer-social-media__content" style="display: -webkit-inline-box; -webkit-box-pack: center; -webkit-box-align: center;">
+                        <ul class="footer-social-media__links">
+                            <li><a class="footer-social-media__links--facebook" href="https://www.facebook.com/Monash.University" target="_blank">Facebook</a></li>
+                            <li><a class="footer-social-media__links--twitter" href="https://twitter.com/MonashUni" target="_blank">Twitter</a></li>
+                            <li><a class="footer-social-media__links--instagram" href="https://www.instagram.com/monash_uni" target="_blank">Instagram</a></li>
+                            <li><a class="footer-social-media__links--linkedin" href="https://www.linkedin.com/company/monash-university" target="_blank">Linked In</a></li>
+                            <li><a class="footer-social-media__links--youtube" href="https://www.youtube.com/user/monashunivideo" target="_blank">Youtube</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row content-wrapper wrapper footer-info" style="padding-top: 1rem;">
+                    <div class="col-xs-8 col-md-10 footer-info__text-block" id="footer-legal">
+                        <p style="color: #505050;">
+                            <small>Monash University values the privacy of every individual's personal information and is committed to the protection of that information from unauthorised use and disclosure except where permitted by law. For information about the handling of your personal information please see the <a href="https://www.monash.edu/__data/assets/pdf_file/0004/1595263/Admissions-Data-Protection-and-Privacy-Collection-Statement.pdf" target="_blank">Admissions Data Protection and Privacy Collection Statement</a>. For more information about Data Protection and Privacy at Monash University please see our <a href="https://www.monash.edu/__data/assets/pdf_file/0003/790086/Privacy.pdf" target="_blank">Data Protection and Privacy Procedure (PDF)</a>.</small>
+                        </p>
+                        <p style="color: #505050;">
+                            <small>If you have any questions about how Monash University is collecting and handling your personal information, please contact our Data Protection and Privacy Office at <a href="mailto:dataprotectionofficer@monash.edu">dataprotectionofficer@monash.edu</a>.</small>
+                        </p>
+                        <p style="color: #505050;">
+                            <small>CRICOS Provider Number: 00008C</small>
+                        </p>
+                        <p style="color: #505050;">
+                            <small>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our four Australian campuses stand. Information for <a href="https://www.monash.edu/indigenous-australians" target="_blank">Indigenous Australians</a></small>
+                        </p>
+                    </div>
+                    <div class="row wrapper col-xs-4 col-md-2 top-xs" style="padding-right: 15px; padding-left: 15px;">
+                        
+                        <div class="top-xs">
+                            <h3 class="col-xs-12 footer-links__section-title">A member of</h3>
+                            <ul class="footer-nav__list">
+                                <li>
+                                    <a class="col-xs-12 footer-links__logo-link" href="https://go8.edu.au">
+                                        <img class="footer-links__logo" src="https://www.monash.edu/__data/assets/git_bridge/0006/509343/deploy/mysource_files/go8_logo_mono.svg" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div></span><script type="text/javascript">Sfdc.onReady(function(){
+	SfdcApp && SfdcApp.Visualforce && SfdcApp.Visualforce.VSManager && SfdcApp.Visualforce.VSManager.vfPrepareForms(["twoFactor:twoFactorForm","twoFactor:alumniForm"]);
+
+});</script></body></html>
